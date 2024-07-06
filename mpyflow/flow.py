@@ -6,75 +6,7 @@ MPYFlow - MicroPython Workflow Engine
 
 Module for building and executing a dependency injection graph from a JSON configuration file.
 
-JSON Configuration File
------------------------
-* The JSON file contains a nested dictionary of nodes
-* Each dictionary - except for the root level - represents a node in the graph.
 
-Nodes
------
-* A node is a dictionary of properties that can define a buildable application element, or a block of static configuration.
-* A node is uniquely identified by its path: a dot-separated string that combines the keys of the nested dictionaries leading to the node.
-* Node properties can contain static values, references to other nodes, or definitions for other nodes (dictionaries)
-* Nodes cannot be defined at the root level of the JSON file as they need to be part of a parent dictionary to get their unique path.
-
-References
-----------
-* Node properties can be references to other nodes in the graph:
-
-    * Reference property keys end with "!ref"
-    * Reference property values represent the dot-separated path to the referenced node.
-    * The graph builder will order the nodes so that the referenced nodes are processed before the nodes that reference them.
-
-Buildable Nodes
----------------
-* Nodes that contain a "call@" key are considered to be buildable
-* The value of the "call@" key is a string representing a callable object in the form "module.submodule.function"
-* The callable object is resolved and called with the remaining attributes of the node as keyword arguments.
-* The result of the callable is assigned to the node. 
-* Any references to the node will resolve to the result of the call
-
-Conditional Nodes
------------------
-* Nodes can be conditionally included in the graph by providing an "if@" key.
-* The value of the "if@" key is a boolean expression that determines if the node should be included.
-* If the value is False, the node is removed from the graph.
-* The expression can also be defined as a buildable node that returns a boolean value.
-
-Example configuration file
---------------------------
-
-```json
-{
-    "controllers": {
-        "http": {
-            "call@": "app.controllers.HttpController",
-            "if@": {
-                "call@": "mpyflow.flow.contains",
-                "obj!ref": "config.active_controllers",
-                "elem": "http"
-            }
-        },
-        "bluetooth": {
-            "call@": "app.controllers.BluetoothController",
-            "if@": {
-                "call@": "mpyflow.flow.contains",
-                "obj!ref": "config.active_controllers",
-                "elem": "bluetooth"
-            }
-        }
-    },
-    "config": {
-        "active_controllers": {
-            "call@": "app.config.get_active_controllers"
-        }
-    },
-    "app": {
-        "call@": "app.App",
-        "controllers!ref": "controllers" 
-    }
-}
-```
 """
 from mpyflow.runtime import getLogger
 from mpyflow.measure import PerformanceContext
