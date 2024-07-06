@@ -1,3 +1,6 @@
+# Title: MPYFlow - MicroPython Workflow Engine
+# Copyright: (c) 2024 Andrei Dumitrache
+# License: MIT License
 """
 MPyFlow - Measure module
 ------------------------
@@ -21,9 +24,6 @@ with PerformanceContext("Processing data"):
 This will log the message "Processing data" at the DEBUG level, and then log
 the time it took to execute the `process_data` function at the INFO level, with an
 optional memory usage message.
-
-
-(c) 2024 - Andrei Dumitrache / MIT License
 """
 import gc
 from time import time_ns

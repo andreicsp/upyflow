@@ -1,10 +1,10 @@
+# Title: MPYFlow - MicroPython Workflow Engine
+# Copyright: (c) 2024 Andrei Dumitrache
+# License: MIT License
 """
 MpyFlow - Runtime utilities
----------------------------
 
 Collection of runtime utilities defined according to the Python platorm being used.
-
-(c) 2024 - Andrei Dumitrache / MIT License
 """
 
 import sys
