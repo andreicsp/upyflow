@@ -7,8 +7,8 @@ MpyFlow - Runtime utilities
 Collection of runtime utilities defined according to the Python platorm being used.
 """
 
-import sys
 import gc
+import sys
 
 # Define the getLogger function based on the platform
 
@@ -40,7 +40,8 @@ except ImportError:
 if sys.implementation.name == "micropython":
     get_alloc_mem = gc.mem_alloc
 else:
-    import psutil
     import os
+
+    import psutil
 
     get_alloc_mem = lambda : psutil.Process(os.getpid()).memory_info().rss

@@ -8,11 +8,12 @@ Module for building and executing a dependency injection graph from a JSON confi
 
 
 """
-from mpyflow.runtime import getLogger
-from mpyflow.measure import PerformanceContext
-import sys
 import builtins
 import json
+import sys
+
+from mpyflow.measure import PerformanceContext
+from mpyflow.runtime import getLogger
 
 _logger = getLogger(__name__)
 
@@ -199,10 +200,10 @@ def build(config_file: str, root_keys: list):
     for path, node in get_ordered_nodes(graph, root_keys):
         process_node(graph, node, path)
 
-    # Remove all keys that are not needed 
-    for key in graph:
-        if key not in root_keys:
-            del graph[key]
+    # Remove all keys that are not needed
+    delete_keys = set(graph.keys()) - set(root_keys)
+    for key in delete_keys:
+        del graph[key]
 
     _config_file_stack.pop()
     _logger.info(f"Runtime built [{config_file}]. Root keys: {root_keys}")

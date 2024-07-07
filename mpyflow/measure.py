@@ -1,9 +1,5 @@
-# Title: MPYFlow - MicroPython Workflow Engine
-# Copyright: (c) 2024 Andrei Dumitrache
-# License: MIT License
 """
 MPyFlow - Measure module
-------------------------
 
 Utilities for measuring performance of code executed in the process of running
 a flow. 
@@ -11,24 +7,12 @@ a flow.
 This module provides a context manager that can be used to measure the
 performance of a block of code, capturing the time it took to execute, and 
 the change in memory usage.
-
-Example:
-
-```python
-from mpyflow.measure import PerformanceContext
-
-with PerformanceContext("Processing data"):
-    process_data()
-```
-
-This will log the message "Processing data" at the DEBUG level, and then log
-the time it took to execute the `process_data` function at the INFO level, with an
-optional memory usage message.
 """
 import gc
 from time import time_ns
+
 from mpyflow.runtime import get_alloc_mem, getLogger
-    
+
 
 class PerformanceContext:
     def __init__(self, msg: str, logger=None, capture_mem=False, silent=False):
