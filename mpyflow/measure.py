@@ -2,10 +2,10 @@
 MPyFlow - Measure module
 
 Utilities for measuring performance of code executed in the process of running
-a flow. 
+a flow.
 
 This module provides a context manager that can be used to measure the
-performance of a block of code, capturing the time it took to execute, and 
+performance of a block of code, capturing the time it took to execute, and
 the change in memory usage.
 """
 import gc
@@ -19,12 +19,16 @@ class PerformanceContext:
         """
         Initializes a new performance context.
 
-        :param msg: Text describing the block of code being measured. 
+        :param msg: Text describing the block of code being measured.
             Logged at the DEBUG level when the context is entered
-            Logged again and at the INFO level when the context is exited with performance information.
-        :param logger: The logger to use for logging messages. Defaults to the root logger.
-        :param capture_mem: Whether to capture memory usage before and after the block of code is executed.
-            Recommended off in non-microcontroller environments as it measures the memory usage of the entire system.
+            Logged again and at the INFO level when the context is
+            exited with performance information.
+        :param logger: The logger to use for logging messages.
+            Defaults to the root logger.
+        :param capture_mem: Whether to capture memory usage before
+            and after the block of code is executed.
+            Recommended off in non-microcontroller environments as it
+            measures the memory usage of the entire system.
         :param silent: Whether to suppress the log messages.
         """
         self.start = 0.0

@@ -5,8 +5,6 @@
 MPYFlow - MicroPython Workflow Engine
 
 Module for building and executing a dependency injection graph from a JSON configuration file.
-
-
 """
 import builtins
 import json

@@ -4,7 +4,8 @@
 """
 MpyFlow - Runtime utilities
 
-Collection of runtime utilities defined according to the Python platorm being used.
+Collection of runtime utilities defined according to the Python
+platorm being used.
 """
 
 import gc
