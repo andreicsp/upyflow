@@ -1,0 +1,10 @@
+{
+    "urls": [
+      ["mpyflow/__init__.py", "github:andreicsp/mpyflow/mpyflow/__init__.py"],
+      ["mpyflow/flow.py", "github:andreicsp/mpyflow/mpyflow/flow.py"],
+      ["mpyflow/measure.py", "github:andreicsp/mpyflow/mpyflow/measure.py"],
+      ["mpyflow/runtime.py", "github:andreicsp/mpyflow/mpyflow/runtime.py"]
+    ],
+    "deps": [],
+    "version": "0.0.1"
+  }

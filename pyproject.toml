@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "mpyflow"
+version = "0.0.1"
+description = "A dependency injection library compatible with MicroPython"
+authors = ["Andrei Dumitrache <andrei@dumitrache.net>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/andreicsp/mpyflow"
+repository = "https://github.com/andreicsp/mpyflow"
+keywords = ["micropython", "python", "di", "dependency", "injection", "iot"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+psutil = "^6.0"
+
+# Add other dependencies your project needs
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+pytest-cov = "^2.11"
+sphinx = "^6.2"
+flake8 = "^3.9.2"
+black = "^21.6"
+isort = "^5.9.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+# Configure pytest options if necessary
+addopts = "--cov=mpyflow --cov-report=term-missing"
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+
+[tool.isort]
+profile = "black"

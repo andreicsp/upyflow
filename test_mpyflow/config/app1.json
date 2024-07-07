@@ -1,0 +1,48 @@
+{
+    "controllers": {
+        "http": {
+            "call@": "test_mpyflow.mockapp.HttpController",
+            "if@": {
+                "call@": "mpyflow.flow.contains",
+                "obj!ref": "active_controllers",
+                "elem": "http"
+            },
+            "config!ref": "config"
+        },
+        "bluetooth": {
+            "call@": "test_mpyflow.mockapp.BluetoothController",
+            "if@": {
+                "call@": "mpyflow.flow.contains",
+                "obj!ref": "active_controllers",
+                "elem": "bluetooth"
+            },
+            "config!ref": "config"
+        },
+        "call": {
+            "call@": "test_mpyflow.mockapp.InactiveController",
+            "if@": {
+                "call@": "mpyflow.flow.contains",
+                "obj!ref": "active_controllers",
+                "elem": "call"
+            },
+            "config!ref": "config"
+        }
+    },
+    "config": {
+        "call@": "test_mpyflow.mockapp.load_config",
+        "config_class": {
+            "call@": "mpyflow.flow.get_class",
+            "name": "test_mpyflow.mockapp.AppConfig"
+        }
+    },
+    "active_controllers": {
+        "call@": "mpyflow.flow.attrval",
+        "obj!ref": "config",
+        "attr": "active_controllers"
+    },
+    "app": {
+        "call@": "test_mpyflow.mockapp.App::create",
+        "controllers!ref": "controllers",
+        "config!ref": "config"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "node1": {
+        "imported_nodes": {
+            "call@": "mpyflow.build",
+            "config_file": {
+                "call@": "test_mpyflow.utils.get_config_file",
+                "name": "import-cycle"
+            },
+            "root_keys": ["node2"]
+        }
+    },
+    "node2": {
+        "prop1": "value1"
+    }
+}
