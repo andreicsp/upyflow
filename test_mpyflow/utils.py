@@ -1,3 +1,6 @@
+"""
+Test utilities to allow for compatibility between CPython and MicroPython.
+"""
 import sys
 
 if sys.implementation.name == 'micropython':
@@ -5,6 +8,7 @@ if sys.implementation.name == 'micropython':
 else:
     import os.path
     CFG_DIR = os.path.join(os.path.dirname(__file__), 'config')
+
 
 def get_config_file(name):
     return CFG_DIR + '/' + name + '.json'
@@ -31,5 +35,6 @@ except ImportError:
                 if self.match not in str(exc_value):
                     raise AssertionError(f"Expected exception message to contain {self.match}, got {exc_value}")
             return True
-    
+
     raises = ExceptionAssertion
+

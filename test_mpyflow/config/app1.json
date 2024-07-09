@@ -3,27 +3,24 @@
         "http": {
             "call@": "test_mpyflow.mockapp.HttpController",
             "if@": {
-                "call@": "mpyflow.flow.contains",
-                "obj!ref": "active_controllers",
-                "elem": "http"
+                "collection!ref": "active_controllers",
+                "contains@": "http"
             },
             "config!ref": "config"
         },
         "bluetooth": {
             "call@": "test_mpyflow.mockapp.BluetoothController",
             "if@": {
-                "call@": "mpyflow.flow.contains",
-                "obj!ref": "active_controllers",
-                "elem": "bluetooth"
+                "collection!ref": "active_controllers",
+                "contains@": "bluetooth"
             },
             "config!ref": "config"
         },
         "call": {
             "call@": "test_mpyflow.mockapp.InactiveController",
             "if@": {
-                "call@": "mpyflow.flow.contains",
-                "obj!ref": "active_controllers",
-                "elem": "call"
+                "collection!ref": "active_controllers",
+                "contains@": "not_a_controller"
             },
             "config!ref": "config"
         }
@@ -31,14 +28,13 @@
     "config": {
         "call@": "test_mpyflow.mockapp.load_config",
         "config_class": {
-            "call@": "mpyflow.flow.get_class",
-            "name": "test_mpyflow.mockapp.AppConfig"
+            "call@": "mpyflow.flow.get_callable",
+            "path": "test_mpyflow.mockapp.AppConfig"
         }
     },
     "active_controllers": {
-        "call@": "mpyflow.flow.attrval",
         "obj!ref": "config",
-        "attr": "active_controllers"
+        "getattr@": "active_controllers"
     },
     "app": {
         "call@": "test_mpyflow.mockapp.App::create",

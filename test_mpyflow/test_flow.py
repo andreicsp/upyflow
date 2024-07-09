@@ -4,7 +4,7 @@ from test_mpyflow.utils import get_config_file, raises
 
 def test_app():
     graph = build(get_config_file('app1'), ['app', 'config'])
-    wired_controllers= graph['app'].controllers
+    wired_controllers = graph['app'].controllers
 
     assert {'http', 'bluetooth'} == set(wired_controllers)
 
@@ -21,6 +21,10 @@ def test_import_cycle():
         build(get_config_file('import-cycle'), ['node1', 'node2'])
 
 
-
 if __name__ == '__main__':
-    test_app()
+    try:
+        import pytest
+        pytest.main(['-v', __file__])
+    except ImportError:
+        test_app()
+        test_import_cycle()

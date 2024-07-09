@@ -9,8 +9,10 @@ class Controller:
 class HttpController(Controller):
     pass
 
+
 class BluetoothController(Controller):
     pass
+
 
 class InactiveController(Controller):
     pass
@@ -27,6 +29,7 @@ class App(Controller):
 
 
 AppConfig = namedtuple('AppConfig', ['active_controllers', 'device_id'])
+
 
 def load_config(config_class):
     return config_class(active_controllers=['http', 'bluetooth'], device_id='1234')
