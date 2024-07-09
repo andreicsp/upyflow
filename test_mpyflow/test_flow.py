@@ -1,4 +1,4 @@
-from mpyflow import build
+from mpyflow.flow import build
 from test_mpyflow.utils import get_config_file, raises
 
 
