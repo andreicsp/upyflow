@@ -1,7 +1,7 @@
-mpyflow
+upyflow
 =======
 
 .. toctree::
    :maxdepth: 4
 
-   mpyflow
+   upyflow

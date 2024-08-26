@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'MPYFlow'
+project = 'upyflow'
 copyright = '2024, Andrei Dumitrache'
 author = 'Andrei Dumitrache'
 

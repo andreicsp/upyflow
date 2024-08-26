@@ -1,29 +1,29 @@
-mpyflow package
+upyflow package
 ===============
 
 Submodules
 ----------
 
-mpyflow.flow module
+upyflow.flow module
 -------------------
 
-.. automodule:: mpyflow.flow
+.. automodule:: upyflow.flow
    :members:
    :undoc-members:
    :show-inheritance:
 
-mpyflow.measure module
+upyflow.measure module
 ----------------------
 
-.. automodule:: mpyflow.measure
+.. automodule:: upyflow.measure
    :members:
    :undoc-members:
    :show-inheritance:
 
-mpyflow.runtime module
+upyflow.runtime module
 ----------------------
 
-.. automodule:: mpyflow.runtime
+.. automodule:: upyflow.runtime
    :members:
    :undoc-members:
    :show-inheritance:
@@ -31,7 +31,7 @@ mpyflow.runtime module
 Module contents
 ---------------
 
-.. automodule:: mpyflow
+.. automodule:: upyflow
    :members:
    :undoc-members:
    :show-inheritance:

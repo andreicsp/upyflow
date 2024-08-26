@@ -1,9 +1,9 @@
 {
     "urls": [
-      ["mpyflow/__init__.py", "github:andreicsp/mpyflow/mpyflow/__init__.py"],
-      ["mpyflow/flow.py", "github:andreicsp/mpyflow/mpyflow/flow.py"],
-      ["mpyflow/measure.py", "github:andreicsp/mpyflow/mpyflow/measure.py"],
-      ["mpyflow/runtime.py", "github:andreicsp/mpyflow/mpyflow/runtime.py"]
+      ["upyflow/__init__.py", "github:andreicsp/upyflow/upyflow/__init__.py"],
+      ["upyflow/flow.py", "github:andreicsp/upyflow/upyflow/flow.py"],
+      ["upyflow/measure.py", "github:andreicsp/upyflow/upyflow/measure.py"],
+      ["upyflow/runtime.py", "github:andreicsp/upyflow/upyflow/runtime.py"]
     ],
     "deps": [],
     "version": "0.0.1"

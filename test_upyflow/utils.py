@@ -4,7 +4,7 @@ Test utilities to allow for compatibility between CPython and MicroPython.
 import sys
 
 if sys.implementation.name == 'micropython':
-    CFG_DIR = '/lib/tests/mpyflow/config'
+    CFG_DIR = '/lib/tests/upyflow/config'
 else:
     import os.path
     CFG_DIR = os.path.join(os.path.dirname(__file__), 'config')

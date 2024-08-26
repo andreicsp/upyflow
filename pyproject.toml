@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "mpyflow"
+name = "upyflow"
 version = "0.0.1"
 description = "A dependency injection library compatible with MicroPython"
 authors = ["Andrei Dumitrache <andrei@dumitrache.net>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/andreicsp/mpyflow"
-repository = "https://github.com/andreicsp/mpyflow"
+homepage = "https://github.com/andreicsp/upyflow"
+repository = "https://github.com/andreicsp/upyflow"
 keywords = ["micropython", "python", "di", "dependency", "injection", "iot"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -35,7 +35,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 # Configure pytest options if necessary
-addopts = "--cov=mpyflow --cov-report=term-missing"
+addopts = "--cov=upyflow --cov-report=term-missing"
 
 [tool.black]
 line-length = 88

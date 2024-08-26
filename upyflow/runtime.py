@@ -1,8 +1,8 @@
-# Title: MPYFlow - MicroPython Workflow Engine
+# Title: upyflow - MicroPython Workflow Engine
 # Copyright: (c) 2024 Andrei Dumitrache
 # License: MIT License
 """
-MpyFlow - Runtime utilities
+upyflow - Runtime utilities
 
 Collection of runtime utilities defined according to the Python
 platorm being used.

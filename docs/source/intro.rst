@@ -1,7 +1,7 @@
 Introduction
 ============
 
-MPYFlow is a micro-sized Python library for executing graphs specified in configuration files.
+upyflow is a micro-sized Python library for executing graphs specified in configuration files.
 The intended application handling processing dependency injection allowing application components to be easily wired together.
 
 Features

@@ -14,7 +14,7 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 complete:
-	@$(SPHINXAPIDOC) -o "$(SOURCEDIR)" "../mpyflow"
+	@$(SPHINXAPIDOC) -o "$(SOURCEDIR)" "../upyflow"
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: help Makefile

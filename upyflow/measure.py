@@ -1,5 +1,5 @@
 """
-MPyFlow - Measure module
+upyflow - Measure module
 
 Utilities for measuring performance of code executed in the process of running
 a flow.
@@ -11,7 +11,7 @@ the change in memory usage.
 import gc
 from time import time_ns
 
-from mpyflow.runtime import get_alloc_mem, getLogger
+from upyflow.runtime import get_alloc_mem, getLogger
 
 ACTION_CALL = 'call'
 ACTION_RUN = 'run'

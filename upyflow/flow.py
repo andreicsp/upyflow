@@ -1,8 +1,8 @@
-# Title: MPYFlow - MicroPython Workflow Engine
+# Title: upyflow - MicroPython Workflow Engine
 # Copyright: (c) 2024 Andrei Dumitrache
 # License: MIT License
 """
-MPYFlow - MicroPython Workflow Engine
+upyflow - MicroPython Workflow Engine
 
 Module for building and executing a dependency injection graph from a JSON configuration file.
 """
@@ -10,8 +10,8 @@ import builtins
 import json
 import sys
 
-from mpyflow.measure import PerformanceContext, ACTION_IMPORT
-from mpyflow.runtime import getLogger
+from upyflow.measure import PerformanceContext, ACTION_IMPORT
+from upyflow.runtime import getLogger
 from collections import namedtuple
 
 _logger = getLogger(__name__)

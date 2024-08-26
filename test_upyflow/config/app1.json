@@ -1,7 +1,7 @@
 {
     "controllers": {
         "http": {
-            "call@": "test_mpyflow.mockapp.HttpController",
+            "call@": "test_upyflow.mockapp.HttpController",
             "if@": {
                 "collection!ref": "active_controllers",
                 "contains@": "http"
@@ -9,7 +9,7 @@
             "config!ref": "config"
         },
         "bluetooth": {
-            "call@": "test_mpyflow.mockapp.BluetoothController",
+            "call@": "test_upyflow.mockapp.BluetoothController",
             "if@": {
                 "collection!ref": "active_controllers",
                 "contains@": "bluetooth"
@@ -17,7 +17,7 @@
             "config!ref": "config"
         },
         "call": {
-            "call@": "test_mpyflow.mockapp.InactiveController",
+            "call@": "test_upyflow.mockapp.InactiveController",
             "if@": {
                 "collection!ref": "active_controllers",
                 "contains@": "not_a_controller"
@@ -26,10 +26,10 @@
         }
     },
     "config": {
-        "call@": "test_mpyflow.mockapp.load_config",
+        "call@": "test_upyflow.mockapp.load_config",
         "config_class": {
-            "call@": "mpyflow.flow.get_callable",
-            "path": "test_mpyflow.mockapp.AppConfig"
+            "call@": "upyflow.flow.get_callable",
+            "path": "test_upyflow.mockapp.AppConfig"
         }
     },
     "active_controllers": {
@@ -37,7 +37,7 @@
         "getattr@": "active_controllers"
     },
     "app": {
-        "call@": "test_mpyflow.mockapp.App::create",
+        "call@": "test_upyflow.mockapp.App::create",
         "controllers!ref": "controllers",
         "config!ref": "config"
     }

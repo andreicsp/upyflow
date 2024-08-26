@@ -2,7 +2,7 @@
     "node1": {
         "imported_nodes": {
             "build@": {
-                "call@": "test_mpyflow.utils.get_config_file",
+                "call@": "test_upyflow.utils.get_config_file",
                 "name": "import-cycle"
             },
             "keys": ["node2"]

@@ -1,4 +1,4 @@
-# MPYFlow
+# upyflow
 
 Micro-sized dependency injection library for MicroPython
 

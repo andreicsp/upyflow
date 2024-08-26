@@ -1,7 +1,7 @@
 Usage
 =====
 
-MPYFlow reads a JSON configuration file and builds a graph of nodes that can be used to represent the 
+upyflow reads a JSON configuration file and builds a graph of nodes that can be used to represent the 
 components of an application, or blocks of static configuration.
 
 The graph is built by resolving references between nodes and calling buildable nodes once their respective 
@@ -86,7 +86,7 @@ Example configuration file
             "http": {
                 "call@": "app.controllers.HttpController",
                 "if@": {
-                    "call@": "mpyflow.flow.contains",
+                    "call@": "upyflow.flow.contains",
                     "obj!ref": "config.active_controllers",
                     "elem": "http"
                 }
@@ -94,7 +94,7 @@ Example configuration file
             "bluetooth": {
                 "call@": "app.controllers.BluetoothController",
                 "if@": {
-                    "call@": "mpyflow.flow.contains",
+                    "call@": "upyflow.flow.contains",
                     "obj!ref": "config.active_controllers",
                     "elem": "bluetooth"
                 }
@@ -115,7 +115,7 @@ Example configuration file
 Executing the flow
 ------------------
 
-The flow is executed by calling the `build` function in the `mpyflow.flow` module.
+The flow is executed by calling the `build` function in the `upyflow.flow` module.
 This takes the path to the JSON configuration file and a list of root nodes to build.
 Dependencies of the root nodes are resolved and built implicitly.
 
@@ -123,7 +123,7 @@ The return value is a dictionary of the root nodes with their resolved values, i
 
 .. code-block:: python
 
-    from mpyflow.flow import build
+    from upyflow.flow import build
 
     result = build("config.json", ["app"])
 

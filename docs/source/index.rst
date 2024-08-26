@@ -1,9 +1,9 @@
-.. MPYFlow documentation master file, created by
+.. upyflow documentation master file, created by
    sphinx-quickstart on Sat Jul  6 19:56:59 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MPYFlow
+upyflow
 =======
 
 .. toctree::

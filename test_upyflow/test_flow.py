@@ -1,5 +1,5 @@
-from mpyflow.flow import build
-from test_mpyflow.utils import get_config_file, raises
+from upyflow.flow import build
+from test_upyflow.utils import get_config_file, raises
 
 
 def test_app():
@@ -8,7 +8,7 @@ def test_app():
 
     assert {'http', 'bluetooth'} == set(wired_controllers)
 
-    from test_mpyflow.mockapp import BluetoothController, HttpController
+    from test_upyflow.mockapp import BluetoothController, HttpController
     assert isinstance(wired_controllers['http'], HttpController)
     assert isinstance(wired_controllers['bluetooth'], BluetoothController)
 
