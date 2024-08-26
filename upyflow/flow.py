@@ -143,11 +143,16 @@ def process_node(graph: dict, node: dict, path: str):
 
     node_callable = _extract_node_action(node)
     if node_callable:
-        with PerformanceContext(
-                node_callable.target, action=node_callable.action,
-                capture_mem=True, silent=node_callable.silent
-        ):
-            node = node_callable.impl(**node)
+        try:
+            with PerformanceContext(
+                    node_callable.target, action=node_callable.action,
+                    capture_mem=True, silent=node_callable.silent
+            ):
+                node = node_callable.impl(**node)
+        except Exception as e:
+            _logger.error(f"Node {path}: {e}. Arguments given: {node}")
+            raise
+        
         _update_node_value(graph, path=path, value=node)
 
 

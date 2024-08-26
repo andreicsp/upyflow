@@ -1,0 +1,17 @@
+{
+    "controllers": {
+        "http": {
+            "call@": "test_upyflow.mockapp.HttpController"
+        },
+        "bluetooth": {
+            "call@": "test_upyflow.mockapp.BluetoothController",
+            "config": "config",
+            "additional_param": "this should not be here"
+        }
+    },
+    "app": {
+        "call@": "test_upyflow.mockapp.App::create",
+        "controllers!ref": "controllers",
+        "config": "config"
+    }
+}

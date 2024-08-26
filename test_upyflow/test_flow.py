@@ -21,6 +21,11 @@ def test_import_cycle():
         build(get_config_file('import-cycle'), ['node1', 'node2'])
 
 
+def test_missing_param():
+    with raises(TypeError, match="missing 1 required positional argument: 'config'"):
+        build(get_config_file('param-errors'), ['controllers'])
+
+
 if __name__ == '__main__':
     try:
         import pytest
