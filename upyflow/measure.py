@@ -92,7 +92,7 @@ class PerformanceContext:
 
         self.end = time_ns()
         if not self.silent:
-            log_method = self.logger.info if exc_type is None else self.logger.error
+            log_method = self.logger.info if exc_type is None else self.logger.exception
             log_method(
                 self.formatter.format_end(
                     action=self.action, detail=self.detail,
